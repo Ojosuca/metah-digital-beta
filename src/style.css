@@ -1,102 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  header {
-    background-color: #111; /* Cor de fundo preta para o cabeçalho */
-    padding: 10px 10px; /* Espaçamento interno do cabeçalho */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
-  
-  .navbar {
-    position: relative; /* Necessário para o pseudo-elemento */
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Alinha os itens nas extremidades */
-    align-items: center; /* Alinha verticalmente os itens */
-    padding: 10px 20px; /* Adiciona um pouco de espaço interno */
-    z-index: 1;
+
+header {
+  background-color: #111; /* Cor de fundo preta para o cabeçalho */
+  padding: 10px 10px; /* Espaçamento interno do cabeçalho */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+.navbar {
+  position: relative; /* Necessário para o pseudo-elemento */
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* Alinha os itens nas extremidades */
+  align-items: center; /* Alinha verticalmente os itens */
+  padding: 10px 20px; /* Adiciona um pouco de espaço interno */
+  z-index: 1;
 }
 
 h1 {
-    margin: 0; /* Remove a margem padrão do título */
-    font-size: 24px; /* Tamanho da fonte do título */
-    color: #FFA500; /* Cor do texto laranja */
+  margin: 0; /* Remove a margem padrão do título */
+  font-size: 24px; /* Tamanho da fonte do título */
+  color: #FFA500; /* Cor do texto laranja */
 }
-  
+
 .cta-button {
-    background-color: #FFA500; /* Cor laranja */
-    color: #fff; /* Cor do texto branco */
-    padding: 12px 24px; /* Aumenta o espaço interno do botão */
-    border: none;
-    border-radius: 10px; /* Arredondamento */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s ease; /* Transição suave para hover */
-    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
-    font-size: 16px; /* Tamanho da fonte */
-  }
-  
-  .cta-button:hover {
-    background-color: #ffa500;
-    box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.5);
-  }
-  
-  .hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
-    text-align: center;
-  }
-  
-  .hero h2 {
-    font-size: 3rem;
-    color: #ffa500;
-  }
-  
-  .services-section, .testimonials-section, .contact-section {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .service-box {
-    background-color: #222;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    transition: transform 0.5s ease;
-  }
-  
-  .service-box:hover {
-    transform: scale(1.05);
-    background-color: #333;
-  }
-  
-  footer {
-    background-color: #222;
-    padding: 20px;
-    text-align: center;
-  }
-  .cta-button {
-    background-color: #FFA500; /* Cor laranja */
-    color: #fff; /* Cor do texto branco */
-    padding: 12px 24px; /* Aumenta o espaço interno do botão */
-    border: none;
-    border-radius: 10px; /* Arredondamento */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: background-color 0.3s ease; /* Transição suave para hover */
-    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
-    font-size: 16px; /* Tamanho da fonte */
-    margin-top: 25px;
+  background-color: #FFA500; /* Cor laranja */
+  color: #fff; /* Cor do texto branco */
+  padding: 12px 24px; /* Aumenta o espaço interno do botão */
+  border: none;
+  border-radius: 10px; /* Arredondamento */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+  font-family: 'Montserrat', sans-serif; /* Fonte Montserrat */
+  font-size: 16px; /* Tamanho da fonte */
 }
 
 .cta-button:hover {
+  background-color: #ff8c00; /* Tom mais escuro de laranja ao passar o mouse */
+  box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.5);
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #ffa500;
+}
+
+.services-section, .testimonials-section, .contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.service-box {
+  background-color: #222;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+footer {
+  background-color: #222;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilizações para Fale Conosco */
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px; /* Limita a largura do formulário */
+  margin: 0 auto; /* Centraliza o formulário */
+}
+
+.contact-section input, 
+.contact-section textarea {
+  width: 100%; /* Campo ocupa toda a largura */
+  padding: 10px;
+  margin: 10px 0; /* Espaçamento entre os campos */
+  border: 1px solid #444; /* Borda para os campos */
+  border-radius: 5px; /* Arredondamento */
+  background-color: #333; /* Cor de fundo dos campos */
+  color: #fff; /* Cor do texto */
+}
+
+/* Estilizações para Depoimentos */
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0; /* Espaçamento entre os depoimentos */
+  max-width: 400px; /* Limita a largura dos depoimentos */
+  text-align: center;
+  transition: transform 0.3s ease; /* Transição para hover */
+}
+
+.testimonial:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+  .hero h2 {
+      font-size: 2rem; /* Reduz o tamanho da fonte em telas menores */
+  }
+
+  .services-section, 
+  .testimonials-section, 
+  .contact-section {
+      padding: 40px 10px; /* Ajusta o padding em telas menores */
+  }
+
+  .cta-button {
+      width: 100%; /* Botão ocupa toda a largura */
+      margin-top: 10px; /* Espaçamento superior */
+  }
+}
+
     background-color: #ff8c00; /* Tom mais escuro de laranja ao passar o mouse */
 }
