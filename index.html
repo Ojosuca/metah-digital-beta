@@ -2,50 +2,68 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Metah Digital - Landing Page</title>
   <meta name="description" content="Transforme sua presença digital com soluções inovadoras da Metah Digital.">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader"></div>
-  </div>
-
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">
         <img src="assets/logo.png" alt="Metah Digital Logo">
       </div>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav no-search">
+      <ul class="nav-links">
+        <li><a href="#hero">Início</a></li>
         <li><a href="#services">Serviços</a></li>
-        <li><a href="#about">Sobre Nós</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#team">Equipe</a></li>
-        <li><a href="#contact" class="cta-button">Contato</a></li>
+        <li><a href="#resources">Recursos</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="cta-button">Entre em Contato</a></li>
       </ul>
+      <div class="toggle-theme">
+        <i class="fas fa-moon"></i>
+      </div>
+      <!-- Botão de Menu para Mobile -->
+      <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
-    <section class="hero">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
       <h1>Soluções Digitais Inovadoras</h1>
       <p>Transforme sua presença digital com a Metah Digital.</p>
       <a href="#services" class="cta-button">Saiba Mais</a>
+      <!-- Background Graphic -->
+      <div class="hero-bg-graphic">
+        <!-- SVG ou imagem gráfica pode ser inserida aqui -->
+      </div>
     </section>
   </header>
 
+  <!-- Main Content -->
   <main>
     <!-- Sobre Nós -->
     <section id="about" class="about-section">
       <h2>Sobre Nós</h2>
-      <p>Nós somos a Metah Digital, uma agência especializada em soluções digitais que impulsionam o seu negócio.</p>
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <h3>Nossa Missão</h3>
+          <p>Oferecer soluções digitais inovadoras que transformam a presença online de nossos clientes, garantindo crescimento e sucesso sustentável.</p>
+        </div>
+        <div class="about-image" data-aos="fade-left">
+          <img src="assets/about-us.jpg" alt="Sobre Nós">
+        </div>
+      </div>
     </section>
 
     <!-- Serviços -->
@@ -53,14 +71,22 @@
       <h2>Nossos Serviços</h2>
       <div class="service-boxes">
         <div class="service-box tilt" data-tilt>
+          <i class="fas fa-paint-brush"></i>
           <h3>Design Moderno</h3>
           <p>Criação de sites com foco em estética e funcionalidade.</p>
         </div>
         <div class="service-box tilt" data-tilt>
+          <i class="fas fa-code"></i>
           <h3>Desenvolvimento Web</h3>
           <p>Sites e sistemas personalizados para o seu negócio.</p>
         </div>
         <div class="service-box tilt" data-tilt>
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Aplicativos Móveis</h3>
+          <p>Desenvolvimento de aplicativos para iOS e Android.</p>
+        </div>
+        <div class="service-box tilt" data-tilt>
+          <i class="fas fa-chart-line"></i>
           <h3>Marketing Digital</h3>
           <p>Estratégias para aumentar sua presença online.</p>
         </div>
@@ -70,40 +96,61 @@
     <!-- Portfólio -->
     <section id="portfolio" class="portfolio-section">
       <h2>Nosso Portfólio</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-item tilt" data-tilt>
-          <img src="assets/project1.jpg" alt="Projeto 1">
-          <h4>Projeto 1</h4>
+      <div class="swiper-container portfolio-carousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide portfolio-item tilt" data-tilt>
+            <img src="assets/portfolio1.jpg" alt="Projeto 1">
+            <div class="portfolio-overlay">
+              <h3>Projeto 1</h3>
+              <p>Descrição breve do projeto.</p>
+            </div>
+          </div>
+          <div class="swiper-slide portfolio-item tilt" data-tilt>
+            <img src="assets/portfolio2.jpg" alt="Projeto 2">
+            <div class="portfolio-overlay">
+              <h3>Projeto 2</h3>
+              <p>Descrição breve do projeto.</p>
+            </div>
+          </div>
+          <div class="swiper-slide portfolio-item tilt" data-tilt>
+            <img src="assets/portfolio3.jpg" alt="Projeto 3">
+            <div class="portfolio-overlay">
+              <h3>Projeto 3</h3>
+              <p>Descrição breve do projeto.</p>
+            </div>
+          </div>
+          <!-- Adicione mais slides conforme necessário -->
         </div>
-        <div class="portfolio-item tilt" data-tilt>
-          <img src="assets/project2.jpg" alt="Projeto 2">
-          <h4>Projeto 2</h4>
-        </div>
-        <div class="portfolio-item tilt" data-tilt>
-          <img src="assets/project3.jpg" alt="Projeto 3">
-          <h4>Projeto 3</h4>
-        </div>
+        <!-- Adicione botões de navegação se desejar -->
+        <div class="swiper-button-next-portfolio"></div>
+        <div class="swiper-button-prev-portfolio"></div>
+        <div class="swiper-pagination-portfolio"></div>
       </div>
     </section>
 
-    <!-- Equipe -->
-    <section id="team" class="team-section">
-      <h2>Nossa Equipe</h2>
-      <div class="team-members">
-        <div class="team-member tilt" data-tilt>
-          <img src="assets/team1.jpg" alt="Membro 1">
-          <h4>Gustavo</h4>
-          <p>CEO & Fundador</p>
+    <!-- Recursos -->
+    <section id="resources" class="resources-section">
+      <h2>Recursos</h2>
+      <div class="resources-list">
+        <div class="resource-item tilt" data-tilt>
+          <i class="fas fa-lock"></i>
+          <h3>Segurança</h3>
+          <p>Protegemos seus dados com as melhores práticas de segurança.</p>
         </div>
-        <div class="team-member tilt" data-tilt>
-          <img src="assets/team2.jpg" alt="Membro 2">
-          <h4>Pessoa1</h4>
-          <p>Designer UI/UX</p>
+        <div class="resource-item tilt" data-tilt>
+          <i class="fas fa-cloud"></i>
+          <h3>Cloud Computing</h3>
+          <p>Serviços na nuvem para escalabilidade e flexibilidade.</p>
         </div>
-        <div class="team-member tilt" data-tilt>
-          <img src="assets/team3.jpg" alt="Membro 3">
-          <h4>Carlos Josué</h4>
-          <p>Desenvolvedor Full Stack</p>
+        <div class="resource-item tilt" data-tilt>
+          <i class="fas fa-headset"></i>
+          <h3>Suporte 24/7</h3>
+          <p>Estamos disponíveis para ajudar sempre que precisar.</p>
+        </div>
+        <div class="resource-item tilt" data-tilt>
+          <i class="fas fa-chart-pie"></i>
+          <h3>Análise de Dados</h3>
+          <p>Transformamos dados em insights valiosos para seu negócio.</p>
         </div>
       </div>
     </section>
@@ -111,53 +158,75 @@
     <!-- Depoimentos -->
     <section id="testimonials" class="testimonials-section">
       <h2>Depoimentos</h2>
-      <div class="testimonial tilt" data-tilt>
-        <p>"Trabalho incrível e super profissional!"</p>
-        <span>- Cliente Satisfeito</span>
-      </div>
-      <div class="testimonial tilt" data-tilt>
-        <p>"Serviço de qualidade e atendimento excepcional."</p>
-        <span>- Outro Cliente Satisfeito</span>
+      <div class="swiper-container testimonial-carousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-testimonials tilt" data-tilt>
+            <p>"Trabalho incrível e super profissional!"</p>
+            <span>- Cliente Satisfeito</span>
+          </div>
+          <div class="swiper-slide swiper-slide-testimonials tilt" data-tilt>
+            <p>"Serviço de qualidade e atendimento excepcional."</p>
+            <span>- Outro Cliente Satisfeito</span>
+          </div>
+          <div class="swiper-slide swiper-slide-testimonials tilt" data-tilt>
+            <p>"A Metah Digital transformou nossa presença online."</p>
+            <span>- Mais um Cliente Satisfeito</span>
+          </div>
+          <!-- Adicione mais slides conforme necessário -->
+        </div>
+        <!-- Adicione botões de navegação se desejar -->
+        <div class="swiper-button-next-testimonials"></div>
+        <div class="swiper-button-prev-testimonials"></div>
+        <div class="swiper-pagination-testimonials"></div>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contact" class="contact-section">
-      <h2>Fale Conosco</h2>
-      <form action="submit_form.php" method="post">
-        <div class="form-group">
-          <label for="name">Seu Nome</label>
-          <div class="input-icon">
-            <input type="text" id="name" name="name" placeholder="Seu Nome" required>
-            <i class="fas fa-user"></i>
-          </div>
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Como iniciar um projeto com a Metah Digital?</h3>
+          <p>Entre em contato conosco através do formulário de contato e agendaremos uma reunião para discutir suas necessidades.</p>
         </div>
-        <div class="form-group">
-          <label for="email">Seu Email</label>
-          <div class="input-icon">
-            <input type="email" id="email" name="email" placeholder="Seu Email" required>
-            <i class="fas fa-envelope"></i>
-          </div>
+        <div class="faq-item">
+          <h3>Qual é o prazo médio para desenvolvimento de um site?</h3>
+          <p>O prazo varia conforme a complexidade do projeto, mas geralmente leva entre 4 a 8 semanas.</p>
         </div>
-        <div class="form-group">
-          <label for="message">Sua Mensagem</label>
-          <div class="input-icon">
-            <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
-            <i class="fas fa-comment"></i>
-          </div>
+        <div class="faq-item">
+          <h3>Quais tecnologias vocês utilizam?</h3>
+          <p>Trabalhamos com as mais recentes tecnologias de desenvolvimento web, incluindo HTML5, CSS3, JavaScript, React, Node.js, entre outras.</p>
         </div>
-        <div class="form-group checkbox-group">
-          <input type="checkbox" id="consent" name="consent" required>
-          <label for="consent">Eu concordo com a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
-        </div>
-        <button type="submit" class="send-button">Enviar Mensagem</button>
-      </form>
+        <!-- Adicione mais FAQs conforme necessário -->
+      </div>
     </section>
   </main>
 
-  <!-- Botão Voltar ao Topo -->
-  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Fale Conosco</h2>
+    <form action="submit_form.php" method="post">
+      <div class="form-group">
+        <label for="name">Seu Nome</label>
+        <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Seu Email</label>
+        <input type="email" id="email" name="email" placeholder="Seu Email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Sua Mensagem</label>
+        <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
+      </div>
+      <div class="form-group consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">Eu concordo com a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 Metah Digital. Todos os direitos reservados.</p>
     <nav class="footer-nav">
@@ -166,9 +235,10 @@
     </nav>
   </footer>
 
+  <!-- Botão Voltar ao Topo -->
+  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
   <!-- Scripts -->
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
@@ -176,6 +246,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- VanillaTilt.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- Custom Script -->
   <script src="src/script.js"></script>
   <script>
@@ -186,3 +258,4 @@
   </script>
 </body>
 </html>
+
