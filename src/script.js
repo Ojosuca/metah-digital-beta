@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Animações GSAP
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   // Animação da Navbar
   gsap.from(".navbar", {
