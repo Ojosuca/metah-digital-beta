@@ -4,66 +4,185 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metah Digital - Landing Page</title>
+  <meta name="description" content="Transforme sua presença digital com soluções inovadoras da Metah Digital.">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
   <header>
     <nav class="navbar">
-      <h1>Metah Digital</h1>
-      <a href="#contact" class="cta-button">Entre em Contato</a>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Metah Digital Logo">
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav no-search">
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#about">Sobre Nós</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#team">Equipe</a></li>
+        <li><a href="#contact" class="cta-button">Contato</a></li>
+      </ul>
     </nav>
-    <section class="hero" data-aos="fade-in">
-      <h2>Soluções Digitais Inovadoras</h2>
+    <section class="hero">
+      <h1>Soluções Digitais Inovadoras</h1>
       <p>Transforme sua presença digital com a Metah Digital.</p>
       <a href="#services" class="cta-button">Saiba Mais</a>
     </section>
   </header>
 
-  <section id="services" class="services-section" data-aos="fade-up">
-    <h2>Nossos Serviços</h2>
-    <div class="service-box" data-aos="zoom-in">
-      <h3>Design Moderno</h3>
-      <p>Criação de sites com foco em estética e funcionalidade.</p>
-    </div>
-    <div class="service-box" data-aos="zoom-in" data-aos-delay="100">
-      <h3>Desenvolvimento Web</h3>
-      <p>Sites e sistemas personalizados para o seu negócio.</p>
-    </div>
-  </section>
+  <main>
+    <!-- Sobre Nós -->
+    <section id="about" class="about-section">
+      <h2>Sobre Nós</h2>
+      <p>Nós somos a Metah Digital, uma agência especializada em soluções digitais que impulsionam o seu negócio.</p>
+    </section>
 
-  <section id="testimonials" class="testimonials-section" data-aos="fade-right">
-    <h2>Depoimentos</h2>
-    <div class="testimonial">
-      <p>"Trabalho incrível e super profissional!"</p>
-      <span>- Cliente Satisfeito</span>
-    </div>
-    <div class="testimonial">
-      <p>"Serviço de qualidade e atendimento excepcional."</p>
-      <span>- Outro Cliente Satisfeito</span>
-    </div>
-  </section>
+    <!-- Serviços -->
+    <section id="services" class="services-section">
+      <h2>Nossos Serviços</h2>
+      <div class="service-boxes">
+        <div class="service-box tilt" data-tilt>
+          <h3>Design Moderno</h3>
+          <p>Criação de sites com foco em estética e funcionalidade.</p>
+        </div>
+        <div class="service-box tilt" data-tilt>
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites e sistemas personalizados para o seu negócio.</p>
+        </div>
+        <div class="service-box tilt" data-tilt>
+          <h3>Marketing Digital</h3>
+          <p>Estratégias para aumentar sua presença online.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="contact" class="contact-section" data-aos="fade-left">
-    <h2>Fale Conosco</h2>
-    <form>
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu Email" required>
-      <textarea placeholder="Sua Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <!-- Portfólio -->
+    <section id="portfolio" class="portfolio-section">
+      <h2>Nosso Portfólio</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-item tilt" data-tilt>
+          <img src="assets/project1.jpg" alt="Projeto 1">
+          <h4>Projeto 1</h4>
+        </div>
+        <div class="portfolio-item tilt" data-tilt>
+          <img src="assets/project2.jpg" alt="Projeto 2">
+          <h4>Projeto 2</h4>
+        </div>
+        <div class="portfolio-item tilt" data-tilt>
+          <img src="assets/project3.jpg" alt="Projeto 3">
+          <h4>Projeto 3</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="team" class="team-section">
+      <h2>Nossa Equipe</h2>
+      <div class="team-members">
+        <div class="team-member tilt" data-tilt>
+          <img src="assets/team1.jpg" alt="Membro 1">
+          <h4>Gustavo</h4>
+          <p>CEO & Fundador</p>
+        </div>
+        <div class="team-member tilt" data-tilt>
+          <img src="assets/team2.jpg" alt="Membro 2">
+          <h4>Pessoa1</h4>
+          <p>Designer UI/UX</p>
+        </div>
+        <div class="team-member tilt" data-tilt>
+          <img src="assets/team3.jpg" alt="Membro 3">
+          <h4>Carlos Josué</h4>
+          <p>Desenvolvedor Full Stack</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="testimonials" class="testimonials-section">
+      <h2>Depoimentos</h2>
+      <div class="testimonial tilt" data-tilt>
+        <p>"Trabalho incrível e super profissional!"</p>
+        <span>- Cliente Satisfeito</span>
+      </div>
+      <div class="testimonial tilt" data-tilt>
+        <p>"Serviço de qualidade e atendimento excepcional."</p>
+        <span>- Outro Cliente Satisfeito</span>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact-section">
+      <h2>Fale Conosco</h2>
+      <form action="submit_form.php" method="post">
+        <div class="form-group">
+          <label for="name">Seu Nome</label>
+          <div class="input-icon">
+            <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Seu Email</label>
+          <div class="input-icon">
+            <input type="email" id="email" name="email" placeholder="Seu Email" required>
+            <i class="fas fa-envelope"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Sua Mensagem</label>
+          <div class="input-icon">
+            <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
+            <i class="fas fa-comment"></i>
+          </div>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Eu concordo com a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</label>
+        </div>
+        <button type="submit" class="send-button">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
   <footer>
     <p>&copy; 2024 Metah Digital. Todos os direitos reservados.</p>
+    <nav class="footer-nav">
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </nav>
   </footer>
 
+  <!-- Scripts -->
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- VanillaTilt.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <!-- Custom Script -->
   <script src="src/script.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
   </script>
 </body>
 </html>
