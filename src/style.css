@@ -190,11 +190,15 @@ header {
   bottom: 0;
   width: 100%;
   height: 150px;
-  background: url('assets/hero-graphic.svg') no-repeat center center/cover;
   pointer-events: none;
 }
 
-.portfolio-gallery::before {
+.hero-bg-graphic svg {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -339,35 +343,32 @@ main {
   margin-bottom: 40px;
 }
 
-.portfolio-gallery {
+.swiper-container.portfolio-carousel {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+.swiper-slide {
+  background: var(--dark-background);
+  display: flex;
   justify-content: center;
-  gap: 20px;
-  position: relative;
-}
-
-.portfolio-item {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
+  align-items: center;
   border-radius: 15px;
-  cursor: pointer;
-  transition: transform var(--transition-speed);
+  overflow: hidden;
 }
 
-.portfolio-item img {
+.swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-speed);
 }
 
-.portfolio-item:hover img {
-  transform: scale(1.1);
-}
-
+/* Portfólio Overlay */
 .portfolio-overlay {
   position: absolute;
   bottom: 0;
@@ -440,24 +441,9 @@ main {
   padding: 20px 0;
 }
 
-.swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.swiper-slide {
-  background: var(--dark-background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-slide.portfolio-item {
+  width: 300px; /* Ajuste conforme necessário */
+  height: 200px; /* Ajuste conforme necessário */
 }
 
 /* Depoimentos Section */
@@ -709,8 +695,8 @@ footer {
   object-fit: cover;
 }
 
-/* Carousel de Depoimentos */
-.swiper-container-testimonial-carousel {
+/* Depoimentos Carousel */
+.swiper-container.testimonial-carousel {
   width: 100%;
   padding: 20px 0;
 }
@@ -760,14 +746,7 @@ footer {
   background: var(--secondary-color);
 }
 
-/* Hamburger Menu (Mobile) */
-.hamburger-menu {
-  display: none;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 1024px) {
   .about-content {
     flex-direction: column;
@@ -802,6 +781,22 @@ footer {
   .resources-list {
     flex-direction: column;
     align-items: center;
+  }
+
+  .service-box,
+  .resource-item {
+    max-width: 90%;
+    flex: 1 1 100%;
+  }
+
+  .service-box h3,
+  .resource-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-box p,
+  .resource-item p {
+    font-size: 0.9rem;
   }
 }
 
