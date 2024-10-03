@@ -294,10 +294,14 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
 .service-box {
   background-color: var(--dark-background);
+  display: flex;
+  visibility: visible;
+  opacity: 1;
   margin: 20px;
   padding: 30px 20px;
   border-radius: 20px;
