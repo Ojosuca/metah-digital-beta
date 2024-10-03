@@ -294,7 +294,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .service-box {
@@ -308,7 +308,6 @@ main {
   flex: 1 1 300px;
   max-width: 300px;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
-  position: relative;
   z-index: 1;
 }
 
