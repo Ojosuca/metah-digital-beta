@@ -234,6 +234,8 @@ main {
   background-color: var(--light-background);
   color: var(--dark-background);
   position: relative;
+  display:  block;
+  visibility: visible;
 }
 
 .about-section h2 {
