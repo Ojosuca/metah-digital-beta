@@ -23,13 +23,21 @@
   
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Metah Digital - Landing Page">
+  <meta property="og:description" content="Transforme sua presença digital com soluções inovadoras da Metah Digital.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:url" content="https://www.metahdigital.com">
+  <meta name="twitter:card" content="summary_large_image">
+  
 </head>
 <body>
   <!-- Navbar -->
   <header>
-    <nav class="navbar" role="navigation" arial-label="main Navigation">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="logo">
-        <img src="assets/logo.png" alt="Metah Digital Logo">
+        <img src="assets/logo.png" alt="Metah Digital Logo" loading="lazy">
       </div>
       <ul class="nav-links">
         <li><a href="#hero">Início</a></li>
@@ -40,13 +48,13 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="cta-button">Entre em Contato</a></li>
       </ul>
-      <div class="toggle-theme" aria-label="alterar tema">
+      <button class="toggle-theme" aria-label="Alterar Tema">
         <i class="fas fa-moon"></i>
-      </div>
+      </button>
       <!-- Botão de Menu para Mobile -->
-      <div class="hamburger-menu" aria-label="menu de navegação">
+      <button class="hamburger-menu" aria-label="Menu de Navegação">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </nav>
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -55,7 +63,9 @@
       <a href="#services" class="cta-button">Saiba Mais</a>
       <!-- Background Graphic -->
       <div class="hero-bg-graphic">
-        <!-- SVG ou imagem gráfica pode ser inserida aqui -->
+        <!-- Example SVG Placeholder -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#FFA500" stroke-width="5"/>
         </svg>
       </div>
     </section>
@@ -64,21 +74,21 @@
   <!-- Main Content -->
   <main>
     <!-- Sobre Nós -->
-    <section id="about" class="about-section">
-  <h2>Sobre Nós</h2>
-  <div class="about-content">
-    <div class="about-text">
-      <h3>Nossa Missão</h3>
-      <p>Oferecer soluções digitais inovadoras que transformam a presença online de nossos clientes, garantindo crescimento e sucesso sustentável.</p>
-    </div>
-    <div class="about-image">
-      <img src="assets/about-us.jpg" alt="Sobre Nós" loading="lazy">
-    </div>
-  </div>
-</section>
-
+    <section id="about" class="about-section" data-aos="fade-up">
+      <h2>Sobre Nós</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Nossa Missão</h3>
+          <p>Oferecer soluções digitais inovadoras que transformam a presença online de nossos clientes, garantindo crescimento e sucesso sustentável.</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/about-us.jpg" alt="Equipe da Metah Digital" loading="lazy">
+        </div>
+      </div>
+    </section>
+    
     <!-- Serviços -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section" data-aos="fade-up">
       <h2>Nossos Serviços</h2>
       <div class="service-boxes">
         <div class="service-box tilt" data-tilt>
@@ -103,28 +113,28 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Portfólio -->
-    <section id="portfolio" class="portfolio-section">
+    <section id="portfolio" class="portfolio-section" data-aos="fade-up">
       <h2>Nosso Portfólio</h2>
       <div class="swiper-container portfolio-carousel">
         <div class="swiper-wrapper">
           <div class="swiper-slide portfolio-item tilt" data-tilt>
-            <img src="assets/portfolio1.jpg" alt="Projeto 1">
+            <img src="assets/portfolio1.jpg" alt="Projeto 1" loading="lazy">
             <div class="portfolio-overlay">
               <h3>Projeto 1</h3>
               <p>Descrição breve do projeto.</p>
             </div>
           </div>
           <div class="swiper-slide portfolio-item tilt" data-tilt>
-            <img src="assets/portfolio2.jpg" alt="Projeto 2">
+            <img src="assets/portfolio2.jpg" alt="Projeto 2" loading="lazy">
             <div class="portfolio-overlay">
               <h3>Projeto 2</h3>
               <p>Descrição breve do projeto.</p>
             </div>
           </div>
           <div class="swiper-slide portfolio-item tilt" data-tilt>
-            <img src="assets/portfolio3.jpg" alt="Projeto 3">
+            <img src="assets/portfolio3.jpg" alt="Projeto 3" loading="lazy">
             <div class="portfolio-overlay">
               <h3>Projeto 3</h3>
               <p>Descrição breve do projeto.</p>
@@ -133,14 +143,14 @@
           <!-- Adicione mais slides conforme necessário -->
         </div>
         <!-- Botões de Navegação -->
-        <div class="swiper-button-next-portfolio"></div>
-        <div class="swiper-button-prev-portfolio"></div>
+        <div class="swiper-button-next-portfolio" aria-label="Próximo Slide"></div>
+        <div class="swiper-button-prev-portfolio" aria-label="Slide Anterior"></div>
         <div class="swiper-pagination-portfolio"></div>
       </div>
     </section>
-
+    
     <!-- Recursos -->
-    <section id="resources" class="resources-section">
+    <section id="resources" class="resources-section" data-aos="fade-up">
       <h2>Recursos</h2>
       <div class="resources-list">
         <div class="resource-item tilt" data-tilt>
@@ -165,9 +175,9 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Depoimentos -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="testimonials" class="testimonials-section" data-aos="fade-up">
       <h2>Depoimentos</h2>
       <div class="swiper-container testimonial-carousel">
         <div class="swiper-wrapper">
@@ -186,48 +196,51 @@
           <!-- Adicione mais slides conforme necessário -->
         </div>
         <!-- Botões de Navegação -->
-        <div class="swiper-button-next-testimonials"></div>
-        <div class="swiper-button-prev-testimonials"></div>
+        <div class="swiper-button-next-testimonials" aria-label="Próximo Depoimento"></div>
+        <div class="swiper-button-prev-testimonials" aria-label="Depoimento Anterior"></div>
         <div class="swiper-pagination-testimonials"></div>
       </div>
     </section>
-
+    
     <!-- FAQ -->
-    <section id="faq" class="faq-section">
+    <section id="faq" class="faq-section" data-aos="fade-up">
       <h2>Perguntas Frequentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3>Como iniciar um projeto com a Metah Digital?</h3>
-          <p>Entre em contato conosco através do formulário de contato e agendaremos uma reunião para discutir suas necessidades.</p>
+          <button aria-expanded="false" aria-controls="faq1-content">Como iniciar um projeto com a Metah Digital?</button>
+          <p id="faq1-content" hidden>Entre em contato conosco através do formulário de contato e agendaremos uma reunião para discutir suas necessidades.</p>
         </div>
         <div class="faq-item">
-          <h3>Qual é o prazo médio para desenvolvimento de um site?</h3>
-          <p>O prazo varia conforme a complexidade do projeto, mas geralmente leva entre 4 a 8 semanas.</p>
+          <button aria-expanded="false" aria-controls="faq2-content">Qual é o prazo médio para desenvolvimento de um site?</button>
+          <p id="faq2-content" hidden>O prazo varia conforme a complexidade do projeto, mas geralmente leva entre 4 a 8 semanas.</p>
         </div>
         <div class="faq-item">
-          <h3>Quais tecnologias vocês utilizam?</h3>
-          <p>Trabalhamos com as mais recentes tecnologias de desenvolvimento web, incluindo HTML5, CSS3, JavaScript, React, Node.js, entre outras.</p>
+          <button aria-expanded="false" aria-controls="faq3-content">Quais tecnologias vocês utilizam?</button>
+          <p id="faq3-content" hidden>Trabalhamos com as mais recentes tecnologias de desenvolvimento web, incluindo HTML5, CSS3, JavaScript, React, Node.js, entre outras.</p>
         </div>
         <!-- Adicione mais FAQs conforme necessário -->
       </div>
     </section>
   </main>
-
+  
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
+  <section id="contact" class="contact-section" data-aos="fade-up">
     <h2>Fale Conosco</h2>
-    <form action="submit_form.php" method="post">
+    <form action="submit_form.php" method="post" novalidate>
       <div class="form-group">
         <label for="name">Seu Nome</label>
         <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+        <span class="error-message" aria-live="polite"></span>
       </div>
       <div class="form-group">
         <label for="email">Seu Email</label>
         <input type="email" id="email" name="email" placeholder="Seu Email" required>
+        <span class="error-message" aria-live="polite"></span>
       </div>
       <div class="form-group">
         <label for="message">Sua Mensagem</label>
         <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
+        <span class="error-message" aria-live="polite"></span>
       </div>
       <div class="form-group consent">
         <input type="checkbox" id="consent" name="consent" required>
@@ -236,42 +249,40 @@
       <button type="submit">Enviar</button>
     </form>
   </section>
-
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Metah Digital. Todos os direitos reservados.</p>
     <nav class="footer-nav">
       <a href="politica-de-privacidade.html">Política de Privacidade</a>
       <a href="termos-de-uso.html">Termos de Uso</a>
+      <div class="social-media">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </nav>
   </footer>
-
+  
   <!-- Botão Voltar ao Topo -->
-  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-
+  <button id="backToTop" aria-label="Voltar ao Topo"><i class="fas fa-arrow-up"></i></button>
+  
   <!-- Scripts -->
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js" defer></script>
   
   <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   
   <!-- VanillaTilt.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
   
   <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   
   <!-- Custom Script -->
-  <script src="src/script.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
+  <script src="src/script.js" defer></script>
 </body>
 </html>
-
