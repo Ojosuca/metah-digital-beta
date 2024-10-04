@@ -278,60 +278,84 @@ main {
 
 /* Services Section */
 .services-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
   position: relative;
+  backgroud-color: var(--dark-background);
 }
 
 .services-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   position: relative;
   z-index: 1;
+  color: var(--primary-color);
 }
 
 .service-boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .service-box {
-  background-color: var(--dark-background);
+  background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   visibility: visible;
   opacity: 1;
   margin: 20px;
-  padding: 30px 20px;
+  padding: 40px 20px;
   border-radius: 20px;
   flex: 1 1 300px;
   max-width: 300px;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
   z-index: 1;
+  cursor: pointer;
 }
 
 .service-box i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .service-box h3 {
   margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  color: var(--primary-color);
 }
 
 .service-box p {
   font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 .service-box:hover {
-  transform: scale(1.05);
-  background-color: var(--secondary-color);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05) translateY(-5px);
+  background-color: var(--priamry-color);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
 }
 
+.service-box:hover h3, 
+.service-box:hover p, 
+.service-box:hover i {
+  color: var(--dark-background); /* Alterado o texto para destacar no fundo colorido */
+
+/* Ajustes para Mobile */
+@media (max-width: 768px) {
+  .service-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    max-width: 90%; /* Ajustar largura para telas menores */
+    margin: 10px 0; /* Espaçamento entre as caixas */
+  }
+}
+  
 /* Portfólio Section */
 .portfolio-section {
   padding: 60px 20px;
