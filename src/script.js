@@ -1,11 +1,16 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Check for prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // Inicialização do AOS
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
+  if (!prefersReducedMotion) {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }
 
   // Inicialização do VanillaTilt
   VanillaTilt.init(document.querySelectorAll(".tilt"), {
@@ -32,10 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
       nextEl: '.swiper-button-next-testimonials',
       prevEl: '.swiper-button-prev-testimonials',
     },
+    a11y: {
+      prevSlideMessage: 'Slide Anterior',
+      nextSlideMessage: 'Próximo Slide',
+      paginationBulletMessage: 'Ir para o slide {{index}}',
+    },
   });
 
   // Inicialização do Swiper para o Carousel de Portfólio
-  var swiperPortfolio = new Swiper('.portfolio-carousel', {
+  const swiperPortfolio = new Swiper('.portfolio-carousel', {
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
@@ -61,130 +71,57 @@ document.addEventListener('DOMContentLoaded', function() {
       640: {
         slidesPerView: 1,
       },
-    }
+    },
+    a11y: {
+      prevSlideMessage: 'Slide Anterior',
+      nextSlideMessage: 'Próximo Slide',
+      paginationBulletMessage: 'Ir para o slide {{index}}',
+    },
   });
 
-  // Animações GSAP
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  if (!prefersReducedMotion) {
+    // Animações GSAP
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  // Animação da Navbar
-  gsap.from(".navbar", {
-    duration: 1,
-    y: -100,
-    opacity: 0,
-    ease: "power2.out"
-  });
-
-  // Timeline para Seção Hero
-  const heroTimeline = gsap.timeline();
-  heroTimeline
-    .from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power2.out" })
-    .from(".hero p", { duration: 1, y: 50, opacity: 0, delay: 0.2, ease: "power2.out" }, "-=0.8")
-    .from(".hero .cta-button", { duration: 1, opacity: 0, scale: 0.5, delay: 0.4, ease: "elastic.out(1, 0.75)" }, "-=0.5");
-  // Animação da Seção Hero
-  gsap.from(".hero h1", {
-    duration: 1,
-    y: -50,
-    opacity: 0,
-    ease: "power2.out"
-  });
-  gsap.from(".hero p", {
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    delay: 0.2,
-    ease: "power2.out"
-  });
-  gsap.from(".hero .cta-button", {
-    duration: 1,
-    opacity: 0,
-    scale: 0.5,
-    delay: 0.4,
-    ease: "elastic.out(1, 0.75)"
-  });
-// Animação das Seções com ScrollTrigger
-  const sections = [
-    { selector: ".services-section", target: ".service-box", x: 0, y: 50 },
-    { selector: ".testimonials-section", target: ".swiper-slide-testimonials", x: -50, y: 0 },
-    { selector: ".about-section", target: ".about-text", x: -100, y: 0 },
-    { selector: ".about-section", target: ".about-image", x: 100, y: 0 },
-    { selector: ".contact-section", target: ".contact-section", x: 0, y: 50 }
-  ];
-
-  sections.forEach(({ selector, target, x, y }) => {
-    gsap.from(target, {
-      scrollTrigger: {
-        trigger: selector,
-        start: "top 80%",
-      },
+    // Animação da Navbar
+    gsap.from(".navbar", {
       duration: 1,
-      x: x,
-      y: y,
+      y: -100,
       opacity: 0,
-      stagger: 0.2,
       ease: "power2.out"
     });
-  });
-  
-  // Animação das Caixas de Serviço
-  gsap.from(".service-box", {
-    scrollTrigger: {
-      trigger: ".services-section",
-      start: "top 80%",
-    },
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    stagger: 0.2,
-    ease: "power2.out"
-  });
 
-  // Animação dos Depoimentos
-  gsap.from(".swiper-slide-testimonials", {
-    scrollTrigger: {
-      trigger: ".testimonials-section",
-      start: "top 80%",
-    },
-    duration: 1,
-    x: -50,
-    opacity: 0,
-    stagger: 0.2,
-    ease: "power2.out"
-  });
+    // Timeline para Seção Hero
+    const heroTimeline = gsap.timeline();
+    heroTimeline
+      .from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power2.out" })
+      .from(".hero p", { duration: 1, y: 50, opacity: 0, delay: 0.2, ease: "power2.out" }, "-=0.8")
+      .from(".hero .cta-button", { duration: 1, opacity: 0, scale: 0.5, delay: 0.4, ease: "elastic.out(1, 0.75)" }, "-=0.5");
 
-  // Animação da Seção de Contato
-  gsap.from(".contact-section", {
-    scrollTrigger: {
-      trigger: ".contact-section",
-      start: "top 80%",
-    },
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    ease: "power2.out"
-  });
+    // Animação das Seções com ScrollTrigger
+    const sections = [
+      { selector: ".services-section", target: ".service-box", x: 0, y: 50 },
+      { selector: ".testimonials-section", target: ".swiper-slide-testimonials", x: -50, y: 0 },
+      { selector: ".about-section", target: ".about-text", x: -100, y: 0 },
+      { selector: ".about-section", target: ".about-image", x: 100, y: 0 },
+      { selector: ".contact-section", target: ".contact-section", x: 0, y: 50 }
+    ];
 
-  // Animação da Seção Sobre Nós
-  gsap.from(".about-text", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 80%",
-    },
-    duration: 1,
-    x: -100,
-    opacity: 0,
-    ease: "power2.out"
-  });
-  gsap.from(".about-image", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 80%",
-    },
-    duration: 1,
-    x: 100,
-    opacity: 0,
-    ease: "power2.out"
-  });
+    sections.forEach(({ selector, target, x, y }) => {
+      gsap.from(target, {
+        scrollTrigger: {
+          trigger: selector,
+          start: "top 80%",
+        },
+        duration: 1,
+        x: x,
+        y: y,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power2.out"
+      });
+    });
+  }
 
   // Back to Top Button
   const backToTopButton = document.getElementById('backToTop');
@@ -204,20 +141,48 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.to(window, { duration: 1, scrollTo: { y: 0, autoKill: true }, ease: "power2.out" });
   });
 
-  // Toggle Theme (Dark/Light Mode)
+  // Toggle Theme (Dark/Light Mode) with Persistence
   const toggleThemeButton = document.querySelector('.toggle-theme');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'light-mode') {
+    document.body.classList.add('light-mode');
+    toggleThemeButton.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
   toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
-    toggleThemeButton.innerHTML = document.body.classList.contains('light-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    const theme = document.body.classList.contains('light-mode') ? 'light-mode' : 'dark-mode';
+    localStorage.setItem('theme', theme);
+    toggleThemeButton.innerHTML = theme === 'light-mode' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
   });
 
-  // FAQ Toggle
+  // FAQ Toggle with ARIA Attributes
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
-    item.addEventListener('click', () => {
-      faqItems.forEach(i => i.classList.remove('active'));
-      item.classList.toggle('active');
+    const button = item.querySelector('button');
+    const content = item.querySelector('p');
+
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      
+      // Close all FAQs
+      faqItems.forEach(i => {
+        i.querySelector('button').setAttribute('aria-expanded', 'false');
+        i.querySelector('p').hidden = true;
+      });
+
+      // Toggle current FAQ
+      if (!isExpanded) {
+        button.setAttribute('aria-expanded', 'true');
+        content.hidden = false;
+        item.classList.add('active');
+      } else {
+        button.setAttribute('aria-expanded', 'false');
+        content.hidden = true;
+        item.classList.remove('active');
+      }
     });
   });
 
@@ -229,5 +194,50 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.classList.toggle('active');
     hamburgerMenu.classList.toggle('active');
   });
-});
 
+  // Active Link Highlighting (Scroll Spy)
+  const sectionsElements = document.querySelectorAll('section');
+  const navLinksElements = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sectionsElements.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinksElements.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Enhanced Form Validation
+  const form = document.querySelector('.contact-section form');
+  const formGroups = document.querySelectorAll('.form-group');
+
+  form.addEventListener('submit', function(e) {
+    let isValid = true;
+
+    formGroups.forEach(group => {
+      const input = group.querySelector('input, textarea');
+      const errorMessage = group.querySelector('.error-message');
+
+      if (!input.checkValidity()) {
+        isValid = false;
+        errorMessage.textContent = input.validationMessage;
+      } else {
+        errorMessage.textContent = '';
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+    }
+  });
+});
