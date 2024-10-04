@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Inicialização do Swiper para o Carousel de Depoimentos
-  var swiperTestimonials = new Swiper('.testimonial-carousel', {
+  const swiperTestimonials = new Swiper('.testimonial-carousel', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
@@ -75,6 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
     ease: "power2.out"
   });
 
+  // Timeline para Seção Hero
+  const heroTimeline = gsap.timeline();
+  heroTimeline
+    .from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power2.out" })
+    .from(".hero p", { duration: 1, y: 50, opacity: 0, delay: 0.2, ease: "power2.out" }, "-=0.8")
+    .from(".hero .cta-button", { duration: 1, opacity: 0, scale: 0.5, delay: 0.4, ease: "elastic.out(1, 0.75)" }, "-=0.5");
   // Animação da Seção Hero
   gsap.from(".hero h1", {
     duration: 1,
@@ -96,7 +102,30 @@ document.addEventListener('DOMContentLoaded', function() {
     delay: 0.4,
     ease: "elastic.out(1, 0.75)"
   });
+// Animação das Seções com ScrollTrigger
+  const sections = [
+    { selector: ".services-section", target: ".service-box", x: 0, y: 50 },
+    { selector: ".testimonials-section", target: ".swiper-slide-testimonials", x: -50, y: 0 },
+    { selector: ".about-section", target: ".about-text", x: -100, y: 0 },
+    { selector: ".about-section", target: ".about-image", x: 100, y: 0 },
+    { selector: ".contact-section", target: ".contact-section", x: 0, y: 50 }
+  ];
 
+  sections.forEach(({ selector, target, x, y }) => {
+    gsap.from(target, {
+      scrollTrigger: {
+        trigger: selector,
+        start: "top 80%",
+      },
+      duration: 1,
+      x: x,
+      y: y,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  });
+  
   // Animação das Caixas de Serviço
   gsap.from(".service-box", {
     scrollTrigger: {
