@@ -64,7 +64,6 @@ header {
   top: 0;
   width: 100%;
   background-color: rgba(17, 17, 17, 0.9);
-  backdrop-filter: blur(10px)
   display: flex;
   justify-content: space-between;
   align-items: center;
