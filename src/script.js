@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     speed: 400,
     glare: true,
     "max-glare": 0.2,
-  });
+ });
 
   // Inicialização do Swiper para o Carousel de Depoimentos
   const swiperTestimonials = new Swiper('.testimonial-carousel', {
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Back to Top Button
-  const backToTopButton = document.getElementById('backToTop');
+  //const backToTopButton = document.getElementById('backToTop');
 
-  window.addEventListener('scroll', () => {
+  /*window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       backToTopButton.style.display = 'block';
       gsap.to(backToTopButton, { opacity: 1, duration: 0.5 });
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   backToTopButton.addEventListener('click', () => {
     gsap.to(window, { duration: 1, scrollTo: { y: 0, autoKill: true }, ease: "power2.out" });
-  });
+  });*/
 
   // Toggle Theme (Dark/Light Mode) with Persistence
   const toggleThemeButton = document.querySelector('.toggle-theme');
